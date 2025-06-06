@@ -19,27 +19,27 @@ IF not exist %OUTDIR% mkdir %OUTDIR%
 
 set ERR_COUNT=0
 
-call :build Bundles\Format7zExtract     7zxa.dll                           || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Format7z            7za.dll                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Format7zF           7z.dll                             || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build UI\FileManager              7zFM.exe                           || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build UI\GUI                      7zG.exe                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build UI\Explorer                 7-zip.dll                          || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\SFXWin              7z.sfx                             || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Codec_brotli        brotli.dll                         || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Codec_lizard        lizard.dll                         || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Format7zExtract     7zxa.dll                           || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Format7z            7za.dll                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Format7zF           7z.dll                             || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build UI\FileManager              7zFM.exe                           || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build UI\GUI                      7zG.exe                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build UI\Explorer                 7-zip.dll                          || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\SFXWin              7z.sfx                             || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Codec_brotli        brotli.dll                         || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Codec_lizard        lizard.dll                         || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
 call :build Bundles\Codec_lz4           lz4.dll                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Codec_lz5           lz5.dll                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Codec_zstd          zstd.dll                           || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Codec_flzma2        flzma2.dll                         || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build ..\..\C\Util\7zipInstall    7zipInstall.exe    Install.exe     || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build ..\..\C\Util\7zipUninstall  7zipUninstall.exe  Uninstall.exe   || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Codec_lz5           lz5.dll                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Codec_zstd          zstd.dll                           || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Codec_flzma2        flzma2.dll                         || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build ..\..\C\Util\7zipInstall    7zipInstall.exe    Install.exe     || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build ..\..\C\Util\7zipUninstall  7zipUninstall.exe  Uninstall.exe   || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
 
-set LFLAGS=/SUBSYSTEM:CONSOLE,%SUBSYS%
+:: set LFLAGS=/SUBSYSTEM:CONSOLE,%SUBSYS%
 
-call :build UI\Console                  7z.exe                             || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\SFXCon              7zCon.sfx                          || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
-call :build Bundles\Alone               7za.exe                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build UI\Console                  7z.exe                             || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\SFXCon              7zCon.sfx                          || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
+:: call :build Bundles\Alone               7za.exe                            || (IF %STOP_ON_ERROR% NEQ 0 goto ende)
 
 :ende
 cd %ROOT%\..
